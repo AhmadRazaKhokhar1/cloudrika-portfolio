@@ -14,7 +14,7 @@ const Navbar = () => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
   return (
-    <nav className="relative bg-white text-gray-700 shadow-md">
+    <nav className="relative bg-white text-[#32469b] shadow-md">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center h-16">
         {/* Logo */}
         <div className="flex items-center">
@@ -22,14 +22,14 @@ const Navbar = () => {
             <Image
               src={cloudRikaLogo}
               alt="Cloud Rika - The Best All in One Software Solution for your Business"
-              width={120} 
-              height={32} 
+              width={120}
+              height={32}
             />
           </Link>
         </div>
 
         {/* Menu Desktop */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center justify-between w-[30%] space-x-6">
           <ul className="flex space-x-6">
             {navItems.map((item) => (
               <li
@@ -38,26 +38,26 @@ const Navbar = () => {
                 onMouseEnter={() => setActiveItem(item.label)}
                 onMouseLeave={() => setActiveItem(null)}
               >
-                <button className="flex items-center gap-1 hover:text-gray-500 focus:outline-none">
-                  <Link href={`/${item.label}`}>
-                    {item.label}
-                    {item.dropdown.length > 0 && <FaChevronDown />}
-                  </Link>
-                </button>
+                <Link
+                  href={`/${item.label}`}
+                  className="flex items-center gap-1 group-hover:text-[#1e99d5] focus:outline-none"
+                >
+                  {item.label}
+                </Link>
                 {item.dropdown.length > 0 && activeItem === item.label && (
                   <motion.ul
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: -15 }}
+                    animate={{ opacity: 1, y: -10 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute left-0 mt-2 w-48 bg-gray-100 rounded shadow-lg"
+                    className="absolute left-0 mt-2 w-48 bg-gray-100 rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible"
                   >
                     {item.dropdown.map((subItem) => (
                       <motion.li
                         key={subItem}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.01, background:"#1e99d5", color:"white" }}
                         transition={{ duration: 0.2 }}
-                        className="px-4 py-2 hover:bg-gray-200"
+                        className="px-4 py-2"
                       >
                         <Link href={`/${item.label}/${subItem.replace(/ /g, "-")}`}>
                           {subItem}
@@ -135,7 +135,7 @@ const Navbar = () => {
                         >
                           <Link
                             href={`/${item.label}/${subItem.replace(/ /g, "-")}`}
-                            onClick={()=>setIsOpen(false)}
+                            onClick={() => setIsOpen(false)}
                           >
                             {subItem}
                           </Link>

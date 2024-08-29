@@ -19,7 +19,6 @@ export const navItems = [
       "WordPress",
     ],
   },
-  { label: "About", dropdown: [] },
   { label: "Contact Us", dropdown: [] },
   { label: "Blogs", dropdown: [] },
 ];
