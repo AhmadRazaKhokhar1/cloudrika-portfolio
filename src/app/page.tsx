@@ -8,6 +8,12 @@ export default function Home() {
       altText="Cloud Rika - The Best All In One Productivity Software Solutions For Your Business"
       imgSrc={headerImageMain.src}
       />
+      <button 
+      className="absolute block px-8 text-white py-5 bg-[#1e99d5] right-0 xl:right-12 xl:top-[36rem] shadow-lg shadow-[#2f375c] rounded-md"
+      
+      >
+        Schedule a free call
+      </button>
       </div>
    </div>
   );

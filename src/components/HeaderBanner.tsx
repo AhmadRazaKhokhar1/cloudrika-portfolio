@@ -8,7 +8,7 @@ export default function HeaderBanner({
   altText: string;
 }) {
   return (
-    <div className="w-[100%] h-[100%] overflow-hidden flex p-0 m-0 items-center justify-center bg-red-400">
+    <div className="w-[100%] h-[100%] overflow-hidden flex p-0 m-0 items-center justify-center">
       <Image
         src={""}
         onError={(e) => {
