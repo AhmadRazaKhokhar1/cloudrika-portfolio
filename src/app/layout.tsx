@@ -4,7 +4,7 @@ import Navbar from "@/components/NavBar";
 
 
 export var metadata: Metadata = {
-  title: "Create Next App",
+  title: "Cloud Rika",
   description: "Cloud Rika - The Best All in One Software Solution for your Business. Get Your ERP, CRM, Email Portal, Civil Operations Portal, Mobile apps, Webapps, Chrome Extensions!",
   keywords:"Cloud Rika, Cloudrika, cloudrika, cloud, cloudrica, cloud rica, cloud solutions, clouds, rika clouds, Ahamd Raza Khokhar"
 };
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={{fontFamily:"cursive"}}>
         <Navbar/>
         {children}
       </body>
