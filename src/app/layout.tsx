@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{fontFamily:"cursive"}}>
+      <body style={{fontFamily:"cursive"}} className="flex flex-col justify-between items-center w-full h-full overflow-x-hidden">
         <Navbar/>
         {children}
       </body>
