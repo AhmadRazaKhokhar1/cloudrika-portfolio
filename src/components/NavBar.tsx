@@ -4,7 +4,7 @@ import cloudRikaLogo from "../assets/CloudRika.png";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaUserCircle, FaChevronDown } from "react-icons/fa";
-import { HiMenu } from "react-icons/hi";
+import { HiMenu, HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { navItems } from "@/globals/global";
 import Link from "next/link";
@@ -14,8 +14,8 @@ const Navbar = () => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
   return (
-    <nav className="relative bg-white text-[#32469b] shadow-md">
-      <div className="container mx-auto px-4 py-2 flex justify-between items-center h-16">
+    <nav className="relative bg-white text-[#32469b] shadow-md w-[100vw] flex mx-auto">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center h-16 w-full">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu Desktop */}
-        <div className="hidden md:flex items-center justify-between w-[30%] space-x-6">
+        <div className="hidden lg:flex items-center justify-between w-[30%] space-x-6">
           <ul className="flex space-x-6">
             {navItems.map((item) => (
               <li
@@ -48,9 +48,9 @@ const Navbar = () => {
                   <motion.ul
                     initial={{ opacity: 0, y: -15 }}
                     animate={{ opacity: 1, y: -10 }}
-                    exit={{ opacity: 0, y: -10 }}
+                    exit={{ opacity: 0, y: -15 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute left-0 mt-2 w-48 bg-gray-100 rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible"
+                    className="absolute left-0 mt-2 w-48 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible"
                   >
                     {item.dropdown.map((subItem) => (
                       <motion.li
@@ -76,9 +76,9 @@ const Navbar = () => {
         </div>
 
         {/* Menu Button Mobile */}
-        <div className="flex md:hidden items-center space-x-4">
+        <div className="flex lg:hidden items-center space-x-4">
           <button className="p-2" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <IoMdClose size={24} /> : <HiMenu size={24} />}
+            {isOpen ? <HiMenuAlt1 size={24} /> : <HiMenu size={24} />}
           </button>
           {/* Profile Icon Mobile */}
           <Link href="/profile">
@@ -92,7 +92,7 @@ const Navbar = () => {
         initial={{ opacity: 0, x: -200 }}
         animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -200 }}
         transition={{ duration: 0.3 }}
-        className={`fixed top-0 left-0 w-full h-full bg-white bg-opacity-90 md:hidden z-50 ${
+        className={`fixed top-0 left-0 w-full h-full bg-white bg-opacity-90 lg:hidden z-50 ${
           isOpen ? "block" : "hidden"
         }`}
       >
