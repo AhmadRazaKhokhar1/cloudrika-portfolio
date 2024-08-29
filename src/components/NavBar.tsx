@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu Desktop */}
-        <div className="hidden lg:flex items-center justify-between w-[30%] space-x-6">
+        <div className="hidden lg:flex items-center justify-between w-[38%] space-x-6">
           <ul className="flex space-x-6">
             {navItems.map((item) => (
               <li
